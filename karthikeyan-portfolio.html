@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karthikeyan S – Photographer & Cinematographer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e7ebef;
+  --panel: #dce2e8;
+  --ink: #1a2531;
+  --muted: #55636f;
+  --line: #b9c3cd;
+  --accent: #a8561a;
+  --on-accent: #fff8f0;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #25323f; --panel: #2e3d4c; --ink: #eef0ee; --muted: #a9b6c1;
+    --line: #475a6b; --accent: #f0a85a; --on-accent: #1b2430;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #25323f; --panel: #2e3d4c; --ink: #eef0ee; --muted: #a9b6c1;
+  --line: #475a6b; --accent: #f0a85a; --on-accent: #1b2430;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.125rem; line-height: 1.6; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+/* nav */
+header.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 56px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 800; text-decoration: none; letter-spacing: -0.01em; }
+.nav nav { display: flex; gap: 1.4rem; font-family: var(--display); font-size: 0.95rem; }
+.nav nav a { text-decoration: none; color: var(--muted); }
+.nav nav a:hover { color: var(--ink); }
+
+/* hero: the letterboxed frame */
+.hero { padding-block: 2.5rem 3rem; }
+.frame {
+  position: relative; aspect-ratio: 2.39 / 1; min-height: 300px;
+  background:
+    radial-gradient(ellipse 60% 80% at 78% 30%, #f0a85a 0%, rgba(240,168,90,0) 60%),
+    radial-gradient(ellipse 70% 90% at 15% 110%, #0f2230 0%, rgba(15,34,48,0) 70%),
+    linear-gradient(160deg, #3d6477 0%, #20384a 55%, #14222e 100%);
+  color: #f4f1ea; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(1.2rem, 4vw, 3rem);
+}
+.frame::before, .frame::after { content: ""; position: absolute; width: 28px; height: 28px; border: 2px solid rgba(255,255,255,.7); }
+.frame::before { top: 16px; left: 16px; border-right: 0; border-bottom: 0; }
+.frame::after { bottom: 16px; right: 16px; border-left: 0; border-top: 0; }
+.frame .tc { position: absolute; top: 18px; right: 22px; font-family: var(--display); font-size: 0.9rem; font-variant-numeric: tabular-nums; display: flex; gap: .5rem; align-items: center; }
+.frame .tc i { width: 9px; height: 9px; border-radius: 50%; background: #ff5a3c; display: inline-block; }
+.frame h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.4rem, 8vw, 6rem); line-height: .95; letter-spacing: -0.03em; margin: 0 0 .6rem; max-width: 12ch; }
+.frame p { margin: 0; font-size: clamp(1rem, 2vw, 1.3rem); max-width: 34ch; opacity: .92; }
+.readout { display: flex; gap: 1.6rem; flex-wrap: wrap; margin-top: .9rem; font-family: var(--display); font-size: .88rem; color: var(--muted); }
+.cta-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.btn { font-family: var(--display); font-weight: 600; font-size: 1rem; padding: .8rem 1.4rem; text-decoration: none; border: 2px solid var(--ink); display: inline-block; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn:hover { transform: translateY(-1px); }
+
+/* sections */
+section { padding-block: 4rem; border-top: 1px solid var(--line); }
+h2 { font-family: var(--display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 .6rem; }
+.lede { color: var(--muted); max-width: 52ch; margin: 0 0 2.2rem; }
+
+/* filmography */
+.film { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.film li { display: grid; grid-template-columns: 150px 1fr auto; gap: 1.4rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.thumb { aspect-ratio: 2.39 / 1; }
+.film h3 { font-family: var(--display); font-size: 1.35rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+.film p { margin: .15rem 0 0; color: var(--muted); font-size: 1rem; }
+.film .yr { font-family: var(--display); color: var(--muted); font-variant-numeric: tabular-nums; }
+.g1 { background: linear-gradient(135deg, #f0a85a, #7a3b2a 60%, #1c1a22); }
+.g2 { background: linear-gradient(160deg, #9fc3cf, #35607a 55%, #10202c); }
+.g3 { background: linear-gradient(120deg, #e9d9b8, #b07a4a 50%, #3b2a22); }
+.g4 { background: linear-gradient(200deg, #b9a6d6, #4a4a8a 55%, #14142e); }
+.g5 { background: linear-gradient(150deg, #cfe0b4, #5f8a5a 55%, #17281d); }
+.g6 { background: linear-gradient(170deg, #f4c4a4, #c4566a 55%, #2a1626); }
+
+/* stills */
+.stills { columns: 3 280px; column-gap: 1rem; }
+.still { break-inside: avoid; margin: 0 0 1rem; }
+.still .ph { width: 100%; }
+.still figcaption { font-family: var(--display); font-size: .85rem; color: var(--muted); padding-top: .4rem; }
+
+/* about */
+.about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; }
+.about p { margin: 0 0 1rem; max-width: 58ch; }
+.kit { background: var(--panel); padding: 1.6rem; align-self: start; }
+.kit h3 { font-family: var(--display); margin: 0 0 .6rem; font-size: 1.1rem; }
+.kit ul { margin: 0 0 1.2rem; padding-left: 1.1rem; }
+.kit ul:last-child { margin-bottom: 0; }
+
+/* contact */
+.contact { text-align: left; }
+.contact .big { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 5vw, 3.4rem); letter-spacing: -0.02em; word-break: break-word; }
+footer { padding-block: 2rem 3rem; border-top: 1px solid var(--line); color: var(--muted); font-family: var(--display); font-size: .9rem; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+@media (max-width: 760px) {
+  .film li { grid-template-columns: 96px 1fr; }
+  .film .yr { display: none; }
+  .about { grid-template-columns: 1fr; gap: 2rem; }
+  .nav nav { gap: 1rem; font-size: .88rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Karthikeyan S</a>
+    <nav aria-label="Main">
+      <a href="#films">Films</a>
+      <a href="#stills">Photography</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="frame" role="img" aria-label="Wide cinematic frame placeholder with the name Karthikeyan S">
+      <div class="tc"><i aria-hidden="true"></i><span id="tc">00:00:00:00</span></div>
+      <h1>Karthikeyan S</h1>
+      <p>Cinematographer and photographer. I shape stories with light, lenses and movement.</p>
+    </div>
+    <div class="readout" aria-label="Shooting details">
+      <span>Available for hire</span>
+      <span>Based in Tamil Nadu, India</span>
+      <span>Travels for shoots</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="#films">Watch my work</a>
+      <a class="btn" href="#contact">Hire me</a>
+    </div>
+  </div>
+
+  <section id="films">
+    <div class="wrap">
+      <h2>Cinematography</h2>
+      <p class="lede">Selected films where I shot as director of photography or camera operator. Replace each frame with a still from the film and link the title to the video.</p>
+      <ul class="film">
+        <li><div class="thumb g1"></div><div><h3>Short film title</h3><p>Director of photography, narrative short</p></div><span class="yr">2026</span></li>
+        <li><div class="thumb g2"></div><div><h3>Brand film title</h3><p>Cinematographer, commercial for [client]</p></div><span class="yr">2025</span></li>
+        <li><div class="thumb g3"></div><div><h3>Music video title</h3><p>Camera operator, music video for [artist]</p></div><span class="yr">2025</span></li>
+        <li><div class="thumb g4"></div><div><h3>Wedding film title</h3><p>Lead cinematographer, cinematic wedding film</p></div><span class="yr">2024</span></li>
+        <li><div class="thumb g5"></div><div><h3>Documentary title</h3><p>Cinematographer, documentary</p></div><span class="yr">2024</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="stills">
+    <div class="wrap">
+      <h2>Photography</h2>
+      <p class="lede">A tight selection of stills across portrait, fashion, event and travel work.</p>
+      <div class="stills">
+        <figure class="still"><div class="ph g6" style="aspect-ratio:4/5"></div><figcaption>Portrait, natural window light</figcaption></figure>
+        <figure class="still"><div class="ph g2" style="aspect-ratio:3/2"></div><figcaption>Street, blue hour</figcaption></figure>
+        <figure class="still"><div class="ph g1" style="aspect-ratio:1/1"></div><figcaption>Fashion editorial</figcaption></figure>
+        <figure class="still"><div class="ph g5" style="aspect-ratio:2/3"></div><figcaption>Travel, early morning</figcaption></figure>
+        <figure class="still"><div class="ph g3" style="aspect-ratio:3/2"></div><figcaption>Event coverage</figcaption></figure>
+        <figure class="still"><div class="ph g4" style="aspect-ratio:4/5"></div><figcaption>Product and still life</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About me</h2>
+        <p>I'm Karthikeyan, a photographer and cinematographer who loves the first hour after sunrise and the last hour before dark. I build each frame around the light that is already there, then shape it so the story feels honest.</p>
+        <p>I work with directors, production houses and brands on films, commercials, music videos and photo shoots. I'm reliable on set, fast with a crew, and careful with the final grade.</p>
+        <p>I'm looking for a full-time role with a production house or creative team where I can keep growing as a cinematographer.</p>
+        <div class="cta-row"><a class="btn" href="#contact">Download resume</a></div>
+      </div>
+      <aside class="kit" aria-label="Skills and kit">
+        <h3>What I do</h3>
+        <ul>
+          <li>Cinematography and camera operation</li>
+          <li>Photography: portrait, fashion, events</li>
+          <li>Lighting setup and colour grading</li>
+          <li>Video and photo editing</li>
+        </ul>
+        <h3>Kit and software</h3>
+        <ul>
+          <li>Cameras: [your camera bodies]</li>
+          <li>Lenses, gimbal and drone: [your gear]</li>
+          <li>Editing: [Premiere Pro, DaVinci Resolve, Lightroom, Photoshop]</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p class="lede">Tell me about your project, role or shoot date and I'll reply within a day.</p>
+      <a class="big" href="mailto:your@email.com">your@email.com</a>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:your@email.com?subject=Hiring%20enquiry">Send an email</a>
+        <a class="btn" href="https://wa.me/910000000000">Message on WhatsApp</a>
+        <a class="btn" href="https://instagram.com/your_handle">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Karthikeyan S, photographer and cinematographer</span>
+    <span id="yr"></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.getElementById("yr").textContent = "© " + new Date().getFullYear();
+  var el = document.getElementById("tc");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = "00:00:12:00"; return; }
+  var start = performance.now(), fps = 24;
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick(now) {
+    var f = Math.floor((now - start) / 1000 * fps);
+    var fr = f % fps, s = Math.floor(f / fps) % 60, m = Math.floor(f / fps / 60) % 60, h = Math.floor(f / fps / 3600);
+    el.textContent = pad(h) + ":" + pad(m) + ":" + pad(s) + ":" + pad(fr);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
